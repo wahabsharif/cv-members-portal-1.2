@@ -1,0 +1,56 @@
+@use "../utils" as *;
+
+/*--
+    - Background color
+-----------------------------------------*/
+.grey-bg {
+  background: var(--tp-grey-1);
+}
+.grey-bg-2 {
+  background: var(--tp-grey-2);
+}
+
+.white-bg {
+  background: var(--tp-common-white);
+}
+
+.black-bg {
+  background: var(--tp-heading-primary);
+}
+.black-bg-dark {
+  background: var(--tp-common-black);
+}
+.black-bg-2 {
+  background: var(--tp-common-black-2);
+}
+.bg-grad {
+  position: relative;
+  background: linear-gradient(135deg, #010203, #014122, #010203);
+  background-size: 200% 200%;
+  animation: gradientAnimation 5s linear infinite; /* Adjust the duration as needed */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-grad::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(white 10%, transparent 0);
+  background-size: 20px 20px; /* Adjust the size of the dots */
+  z-index: -1; /* Place the dots behind the gradient */
+  opacity: 0.5; /* Adjust the opacity of the dots */
+}
