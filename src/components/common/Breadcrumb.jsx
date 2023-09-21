@@ -19,7 +19,7 @@ const Breadcrumb = ({ title, subtitle }) => {
                 <h3 className="breadcrumb__title">{title}</h3>
                 <div className="breadcrumb__list">
                   <span>
-                    <Link href="/">Home</Link>
+                    <Link href="https://capitalvalley.pk/">Home</Link>
                   </span>
                   <span className="dvdr">
                     <i className="fa-light fa-colon"></i>
