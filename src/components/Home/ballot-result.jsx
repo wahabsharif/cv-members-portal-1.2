@@ -19,11 +19,9 @@ const BallotResults = () => {
         key: "portal_key", // Replace with the actual key you want to send
       };
       const response = await axios.post(
-        `http://rem.creativerp.org/cv_balloting/web/ApisController.php?action=ballot_result&ms=${userId}`,
+        `https://rem.creativerp.org/cv_balloting/web/ApisController.php?action=ballot_result&ms=${userId}`,
         data
       );
-
-      console.log("API Response:", response.data);
 
       if (response.data.success) {
         const payloadData = response.data.payload;
@@ -66,6 +64,7 @@ const BallotResults = () => {
       console.error("Error exporting as image:", error);
     }
   }
+  // Date
   useEffect(() => {
     const today = new Date();
     const day = String(today.getDate()).padStart(2, "0");
