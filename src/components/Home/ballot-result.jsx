@@ -57,7 +57,7 @@ const BallotResults = () => {
       const canvas = await html2canvas(containerRef.current);
       canvas.toBlob((blob) => {
         if (blob) {
-          saveAs(blob, `Ballot Receipt.${format}`);
+          saveAs(blob, `Ballot Receipt-${userId}.${format}`);
         }
       }, `image/${format}`);
     } catch (error) {
@@ -92,7 +92,7 @@ const BallotResults = () => {
         doc.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
 
         // Save or download the PDF
-        doc.save("Ballot Receipt.pdf");
+        doc.save(`Ballot Receipt-${userId}`);
       });
     }
   };
